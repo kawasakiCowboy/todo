@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>todoer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <div class="page-container">
+      <div class="sidebar">
+        <div class="sidebar-title">
+          <p>Project list</p>
+        </div>
+        <div class="sidebar-container">
+          <div class="default-project project-button project" style="visibility: hidden; position: absolute;">
+            <p>default project</p>
+          </div>
+          <div class="not-default-project" style="visibility: hidden; position: absolute;">
+            <p>not default project</p>
+          </div>
+          <div class="add-project project-button">
+            <p>add a project</p>
+          </div>
+        </div>
+      </div>
+      <div class="todo-container">
+        <div class="open-card-clear" style="visibility: hidden">
+          <div class="title-bar">
+            <p>title</p>
+              <input type="text" name="title" id="title">
+                <svg class="title-bar-delete" width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_10_8)">
+                  <path opacity="0.3" d="M10.2083 20.4167H22.4583V36.75H10.2083V20.4167Z" fill="#323232"/>
+                  <path d="M30.6249 32.6667H38.7916V36.75H30.6249V32.6667ZM30.6249 16.3333H44.9166V20.4167H30.6249V16.3333ZM30.6249 24.5H42.8749V28.5833H30.6249V24.5ZM6.12492 36.75C6.12492 38.9958 7.96242 40.8333 10.2083 40.8333H22.4583C24.7041 40.8333 26.5416 38.9958 26.5416 36.75V16.3333H6.12492V36.75ZM10.2083 20.4167H22.4583V36.75H10.2083V20.4167ZM20.4166 8.16666H12.2499L10.2083 10.2083H4.08325V14.2917H28.5833V10.2083H22.4583L20.4166 8.16666Z" fill="#323232"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_10_8">
+                  <rect width="49" height="49" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg> 
+          </div>
+          <div class="open-card-content">
+            <div class="open-card-text">
+              <textarea type="text" name="text" id="text"></textarea>
+              
+            </div>
+            
+            <div class="clear-card-deadline">
+              <p>deadline:</p>
+              <input class="deadline-picker" type="date" name="deadline" id="deadline">
+            </div>
+            
+            <div class="open-card-done">
+              <button class="open-card-button">create</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="open-card" style="visibility: hidden">
+          <div class="title-bar">
+            <svg class="title-bar-close" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_2_82)">
+              <path d="M38 12.82L35.18 10L24 21.18L12.82 10L10 12.82L21.18 24L10 35.18L12.82 38L24 26.82L35.18 38L38 35.18L26.82 24L38 12.82Z" fill="#323232"/>
+              </g>
+              <rect x="0.5" y="0.5" width="47" height="47" stroke="black"/>
+              <defs>
+              <clipPath id="clip0_2_82">
+              <rect width="48" height="48" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg>
+              <h1>Get shit done</h1>
+              <svg class="title-bar-edit" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M29.0282 0.547778C28.6505 0.17 28.1783 0 27.6873 0C27.1962 0 26.7241 0.188889 26.3652 0.547778L22.909 4.00444L29.9914 11.0878L33.4476 7.63111C34.1841 6.89444 34.1841 5.70444 33.4476 4.96778L29.0282 0.547778ZM27.9706 13.1089L20.8882 6.02556L0 26.9167V34H7.08235L27.9706 13.1089ZM3.77725 30.2222V28.4844L20.8882 11.3711L22.6257 13.1089L5.51479 30.2222H3.77725Z" fill="#323232"/>
+                </svg>
+                <svg class="title-bar-delete" width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_10_8)">
+                  <path opacity="0.3" d="M10.2083 20.4167H22.4583V36.75H10.2083V20.4167Z" fill="#323232"/>
+                  <path d="M30.6249 32.6667H38.7916V36.75H30.6249V32.6667ZM30.6249 16.3333H44.9166V20.4167H30.6249V16.3333ZM30.6249 24.5H42.8749V28.5833H30.6249V24.5ZM6.12492 36.75C6.12492 38.9958 7.96242 40.8333 10.2083 40.8333H22.4583C24.7041 40.8333 26.5416 38.9958 26.5416 36.75V16.3333H6.12492V36.75ZM10.2083 20.4167H22.4583V36.75H10.2083V20.4167ZM20.4166 8.16666H12.2499L10.2083 10.2083H4.08325V14.2917H28.5833V10.2083H22.4583L20.4166 8.16666Z" fill="#323232"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_10_8">
+                  <rect width="49" height="49" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg> 
+          </div>
+          <div class="open-card-content">
+            <div class="open-card-text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <div class="open-card-edit">
+                <svg  width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M29.0282 0.547778C28.6505 0.17 28.1783 0 27.6873 0C27.1962 0 26.7241 0.188889 26.3652 0.547778L22.909 4.00444L29.9914 11.0878L33.4476 7.63111C34.1841 6.89444 34.1841 5.70444 33.4476 4.96778L29.0282 0.547778ZM27.9706 13.1089L20.8882 6.02556L0 26.9167V34H7.08235L27.9706 13.1089ZM3.77725 30.2222V28.4844L20.8882 11.3711L22.6257 13.1089L5.51479 30.2222H3.77725Z" fill="#323232"/>
+                </svg>
+              </div>
+            
+            </div>
+            
+            <div class="open-card-dates">
+              <p>added: 13-12-2024</p>
+              <p>today: 01-01-2025</p>
+              <div class="deadline-dates">
+                <p>deadline: 02-01-2025</p>
+                <svg class="title-bar-edit" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M29.0282 0.547778C28.6505 0.17 28.1783 0 27.6873 0C27.1962 0 26.7241 0.188889 26.3652 0.547778L22.909 4.00444L29.9914 11.0878L33.4476 7.63111C34.1841 6.89444 34.1841 5.70444 33.4476 4.96778L29.0282 0.547778ZM27.9706 13.1089L20.8882 6.02556L0 26.9167V34H7.08235L27.9706 13.1089ZM3.77725 30.2222V28.4844L20.8882 11.3711L22.6257 13.1089L5.51479 30.2222H3.77725Z" fill="#323232"/>
+                  </svg>
+              </div>
+              <p>deadline: changes: 13</p>
+            </div>
+            <div class="open-card-done">
+              <button class="open-card-button">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="todo-container-title">
+          <p class="project-title">default project</p>
+          <svg class="edit-project" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25.6131 0.483333C25.2798 0.15 24.8632 0 24.4299 0C23.9967 0 23.5801 0.166667 23.2634 0.483333L20.2139 3.53333L26.463 9.78333L29.5126 6.73333C30.1625 6.08333 30.1625 5.03333 29.5126 4.38333L25.6131 0.483333V0.483333ZM24.6799 11.5667L18.4308 5.31667L0 23.75V30H6.24913L24.6799 11.5667V11.5667ZM3.33287 26.6667V25.1333L18.4308 10.0333L19.9639 11.5667L4.86599 26.6667H3.33287Z" fill="#323232"/>
+          </svg>
+          <svg class="delete-project" width="48" height="48" viewBox="-5 8 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_10_2)">
+            <path opacity="0.3" d="M10.2084 20.4167H22.4584V36.75H10.2084V20.4167Z" fill="#323232"/>
+            <path d="M30.625 32.6667H38.7917V36.75H30.625V32.6667ZM30.625 16.3333H44.9167V20.4167H30.625V16.3333ZM30.625 24.5H42.875V28.5833H30.625V24.5ZM6.12504 36.75C6.12504 38.9958 7.96254 40.8333 10.2084 40.8333H22.4584C24.7042 40.8333 26.5417 38.9958 26.5417 36.75V16.3333H6.12504V36.75ZM10.2084 20.4167H22.4584V36.75H10.2084V20.4167ZM20.4167 8.16666H12.25L10.2084 10.2083H4.08337V14.2917H28.5834V10.2083H22.4584L20.4167 8.16666Z" fill="#323232"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_10_2">
+            <rect width="49" height="49" fill="white"/>
+            </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="cards">
+          <div class="card" style="visibility: hidden; position: absolute;" >
+            <p class="card-title">Get shit done</p>
+            <p class="card-text">It took a little to much time to make a little amout of shit done, make get...</p>
+            <p class="card-deadline">Days till deadline: 1</p>
+          </div>
+          <div class="card-add">
+            <p>add a todo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
