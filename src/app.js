@@ -1,7 +1,10 @@
 import { ProjectList } from "./project_list.js";
 import { showProjectsDiv } from "./projFunc.js";
 import { clearCards } from "./todoFunc.js";
-import "./style.css";
+import "./main.css";
+import "./sidebar.css";
+import "./todo_container.css";
+import "./open_card.css";
 
 
 // INITIALIZE AN APP
@@ -25,7 +28,9 @@ editProject.addEventListener("click", () => {
     let titleInput = document.createElement("input");
     titleInput.setAttribute("class", "project-title");
     title.replaceWith(titleInput);
+    titleInput.focus();
     let okButton = document.createElement("button");
+    okButton.setAttribute("class", "title-ok-button");
     okButton.textContent = "Ok";
     editProject.replaceWith(okButton);
     okButton.addEventListener("click", () => {

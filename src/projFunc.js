@@ -10,6 +10,8 @@ export function renderProjectButton(name,id, projList) {
         projList.changeCurrentProject(e.target.id - 1);
         clearCards();
         projList.currentProject.showToDos(projList);
+        let title = document.querySelector(".project-title");
+        title.textContent = projList.currentProject.title;
     } )
     projClone.removeAttribute("style");
     projClone.classList.add("project-button","project");
@@ -27,7 +29,6 @@ export function clearProjectButton() {
 
 export function showProjectsDiv(projList) {
     clearProjectButton();
-    console.log(projList);
     for (let project of projList.projectList) {
         renderProjectButton(project.title,project.id, projList);
     }

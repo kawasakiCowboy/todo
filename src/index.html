@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>todoer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
 </head>
   <body>
     <div class="page-container">
@@ -28,9 +28,8 @@
         </div>
       </div>
       <div class="todo-container">
-        <div class="open-card-clear" style="visibility: hidden">
+        <div class="open-card-clear" style="visibility: hidden" id="card-add">
           <div class="title-bar">
-            <p>title</p>
               <input type="text" name="title" id="title">
                 <svg class="title-bar-delete" width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_10_8)">
@@ -61,7 +60,11 @@
           </div>
         </div>
         
-        <div class="open-card" style="visibility: hidden">
+
+
+
+        
+        <!-- <div class="open-card" style="visibility: hidden">
           <div class="title-bar">
             <svg class="title-bar-close" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_2_82)">
@@ -116,7 +119,40 @@
               <button class="open-card-button">Done</button>
             </div>
           </div>
+        </div> -->
+
+        <div class="open-card-clear" style="visibility: hidden" id="card-edit">
+          <div class="title-bar">
+              <input type="text" name="title" id="title">
+              <svg class="title-bar-delete" width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_10_9)">
+                <path opacity="0.3" d="M10.2083 20.4167H22.4583V36.75H10.2083V20.4167Z" fill="#323232"/>
+                <path d="M30.6249 32.6667H38.7916V36.75H30.6249V32.6667ZM30.6249 16.3333H44.9166V20.4167H30.6249V16.3333ZM30.6249 24.5H42.8749V28.5833H30.6249V24.5ZM6.12492 36.75C6.12492 38.9958 7.96242 40.8333 10.2083 40.8333H22.4583C24.7041 40.8333 26.5416 38.9958 26.5416 36.75V16.3333H6.12492V36.75ZM10.2083 20.4167H22.4583V36.75H10.2083V20.4167ZM20.4166 8.16666H12.2499L10.2083 10.2083H4.08325V14.2917H28.5833V10.2083H22.4583L20.4166 8.16666Z" fill="#323232"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_10_8">
+                <rect width="49" height="49" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg> 
+          </div>
+          <div class="open-card-content">
+            <div class="open-card-text">
+              <textarea type="text" name="text" id="text"></textarea>
+              
+            </div>
+            
+            <div class="clear-card-deadline">
+              <p>deadline:</p>
+              <input class="deadline-picker" type="date" name="deadline" id="deadline">
+            </div>
+            
+            <div class="open-card-done">
+              <button class="open-card-button">create</button>
+            </div>
+          </div>
         </div>
+
 
         <div class="todo-container-title">
           <p class="project-title">default project</p>
