@@ -19,7 +19,7 @@
     margin-left: auto;
 }
 
-#title {
+#title-edit, #title-add {
     background-color: transparent;
     height: 30px;
     width: 80%;

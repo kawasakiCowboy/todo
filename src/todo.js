@@ -1,22 +1,3 @@
-// import "./style.css";
-
-// CLASS todo 
-// PROPERTIES - title (string), text (string), deadline (date), 
-// dateCreated (date), deadlineChanges (number), status (string)
-// METHODS - getData, delete, changeStatus, editText, editDeadline, editTitle
-//
-//
-// CLASS project
-// PROPERTIES - title (string), todoList (array)
-// METHODS - getTodos, changeTitle, delete, createTodo, getTodoCards
-//
-//
-// CLASS project list
-// PROPERTIES - projectList (array)
-// METHODS - addProject, getProjects
-// 
-// 
-
 export class Todo {
     constructor(title,text,deadline) {
         let date = new Date()
@@ -24,6 +5,7 @@ export class Todo {
         this.text = text;
         this.dateCreated = date;
         this.deadline = deadline;
+        this.id = undefined;
         this.status = "progress";
     }
 

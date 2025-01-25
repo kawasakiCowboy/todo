@@ -1,4 +1,4 @@
-import { clearCards } from "./todoFunc.js";
+import { showToDoDiv } from "./todoFunc.js";
 
 
 export function renderProjectButton(name,id, projList) {
@@ -8,8 +8,7 @@ export function renderProjectButton(name,id, projList) {
     let projClone = projectNode.cloneNode(true);
     projClone.addEventListener("click", (e) => {
         projList.changeCurrentProject(e.target.id - 1);
-        clearCards();
-        projList.currentProject.showToDos(projList);
+        showToDoDiv(projList);
         let title = document.querySelector(".project-title");
         title.textContent = projList.currentProject.title;
     } )

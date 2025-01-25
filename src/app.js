@@ -1,6 +1,7 @@
 import { ProjectList } from "./project_list.js";
 import { showProjectsDiv } from "./projFunc.js";
 import { clearCards } from "./todoFunc.js";
+import { showToDoDiv } from "./todoFunc.js";
 import "./main.css";
 import "./sidebar.css";
 import "./todo_container.css";
@@ -11,6 +12,7 @@ import "./open_card.css";
 export const projList = new ProjectList();
 projList.createProject("default project");
 showProjectsDiv(projList);
+window.projList = projList;
 
 
 // LISTENER ON "ADD A PROJECT"
@@ -45,21 +47,20 @@ editProject.addEventListener("click", () => {
 // LISTENER ON "ADD A TODO"
 const addTodoButton = document.querySelector(".card-add");
 addTodoButton.addEventListener("click", () => {
-    let defaultCard = document.querySelector(".open-card-clear");
+    let defaultCard = document.querySelector("#card-add");
     let addCard = defaultCard.cloneNode(true);
     addCard.removeAttribute("style");
     let todoContainer = document.querySelector(".todo-container");
     todoContainer.insertBefore(addCard, defaultCard);
-    let title = addCard.querySelector("#title");
+    let title = addCard.querySelector("#title-add");
     let createButton = addCard.querySelector("button");
     let text = addCard.querySelector("#text");
     let deadline = addCard.querySelector(".deadline-picker");
-    let deleteButton = addCard.querySelector(".title-bar-delete");
+    let deleteButton = addCard.querySelector(".title-bar-delete-add");
     createButton.addEventListener("click", () => {
-        clearCards();
         let deadlineFormat = new Date(deadline.value);
         projList.currentProject.createTodo(title.value,text.value,deadlineFormat);
-        projList.currentProject.showToDos(projList);
+        showToDoDiv(projList);
         addCard.remove();
     })
     deleteButton.addEventListener("click", () => {
