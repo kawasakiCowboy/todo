@@ -11,6 +11,9 @@ export function renderTodo(title,text,deadlineDays) {
     cardDeadline.textContent = `Days till deadline: ${deadlineDays}`
     toDoClone.removeAttribute("style");
     toDoClone.classList.add("card-active");
+    toDoClone.addEventListener("click", () => {
+        console.log("open card");
+    })
     toDoDOM.insertBefore(toDoClone, addButton);
 }
 

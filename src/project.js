@@ -1,5 +1,5 @@
 import { Todo } from "./todo";
-import { renderTodo } from "./todoDOM";
+import { renderTodo } from "./todoFunc";
 
 
 export class Project {

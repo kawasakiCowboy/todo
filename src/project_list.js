@@ -1,6 +1,6 @@
 import { Project } from "./project";
-import { renderProjectButton, clearProjectButton } from "./projDOM";
-import { clearCards } from "./todoDOM";
+import { renderProjectButton, clearProjectButton } from "./projFunc";
+import { clearCards } from "./todoFunc";
 import { projList } from "./app";
 
 export class ProjectList {

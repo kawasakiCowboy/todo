@@ -1,4 +1,4 @@
-import { clearCards } from "./todoDOM.js";
+import { clearCards } from "./todoFunc.js";
 
 
 export function renderProjectButton(name,id, projList) {

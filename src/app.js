@@ -1,6 +1,6 @@
 import { ProjectList } from "./project_list.js";
-import { showProjectsDiv } from "./projDOM.js";
-import { clearCards } from "./todoDOM.js";
+import { showProjectsDiv } from "./projFunc.js";
+import { clearCards } from "./todoFunc.js";
 import "./style.css";
 
 
