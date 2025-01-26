@@ -2,10 +2,11 @@ import { Todo } from "./todo";
 
 
 export class Project {
-    constructor(title) {
+    constructor(title, status) {
         this.title = title;
         this.todoList = [];
         this.idCount = 0;
+        this.status = status === undefined ? "active" : status;
     }
 
     createTodo(title,text,deadline) {

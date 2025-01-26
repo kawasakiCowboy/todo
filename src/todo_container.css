@@ -63,3 +63,9 @@
 .card-title {
     font-weight: bold;
 }
+
+p.card-title, p.card-text, p.card-deadline {
+    pointer-events: none;
+    overflow: hidden; 
+}
+

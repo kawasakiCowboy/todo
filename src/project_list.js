@@ -10,8 +10,8 @@ export class ProjectList {
         this.idCount = 0;
     }
 
-    createProject(name) {
-        let newProject = new Project(name);
+    createProject(name,status) {
+        let newProject = new Project(name,status);
         this.idCount = this.idCount + 1;
         newProject.id = this.idCount;
         this.projectList.push(newProject);
@@ -21,6 +21,18 @@ export class ProjectList {
 
     changeCurrentProject(id) {
         this.currentProject = this.projectList[id];
+    }
+
+    saveLocalStorage() {
+        let  strProjList = JSON.stringify(this);
+        localStorage.setItem(
+        "projList",
+        strProjList
+    )
+    }
+
+    changeStatus(id) {
+        this.projectList[id - 1].status = this.projectList[id - 1].status === "active" ? 'inactive' : "active"
     }
 }
 

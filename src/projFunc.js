@@ -9,8 +9,8 @@ export function renderProjectButton(name,id, projList) {
     projClone.addEventListener("click", (e) => {
         projList.changeCurrentProject(e.target.id - 1);
         showToDoDiv(projList);
-        let title = document.querySelector(".project-title");
-        title.textContent = projList.currentProject.title;
+        showProjectTitle(projList);
+        projList.saveLocalStorage();
     } )
     projClone.removeAttribute("style");
     projClone.classList.add("project-button","project");
@@ -29,10 +29,16 @@ export function clearProjectButton() {
 export function showProjectsDiv(projList) {
     clearProjectButton();
     for (let project of projList.projectList) {
+        if (project.status === "active") {
         renderProjectButton(project.title,project.id, projList);
     }
 }
+}
 
+export function showProjectTitle(projList) {
+    let title = document.querySelector(".project-title");
+    title.textContent = projList.currentProject.title;
+}
 
 
 

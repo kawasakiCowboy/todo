@@ -14,6 +14,7 @@ export function renderTodo(title,text,deadlineDays,id, projList) {
     toDoClone.classList.add("card-active");
     toDoClone.addEventListener("click", (e) => {
         openCard(projList, e.target.id);
+        projList.saveLocalStorage();
     })
     toDoDOM.insertBefore(toDoClone, addButton);
 }
@@ -30,16 +31,17 @@ export function openCard(projList, cardId) {
     let cardOpen = document.querySelector("#card-edit");
     let cardOpenNew = cardOpen.cloneNode(true); 
     let cardCloseButton = cardOpenNew.querySelector(".title-bar-delete-edit");
-    let cardOpenNewTitle = document.querySelector("#title-edit");
-    cardOpenNewTitle.value = projList.currentProject.todoList[0].title;
-    cardOpen.removeAttribute("style");
-    cardNode.appendChild(cardOpenNew);
-    console.log(cardCloseButton);
+    let cardOpenNewTitle = cardOpenNew.querySelector("#title-edit");
+    let cardOpenNewText = cardOpenNew.querySelector("#text");
+    let index = projList.currentProject.todoList.findIndex( toDo => toDo.id == cardId)
+    cardOpenNewTitle.value = projList.currentProject.todoList[index].title;
+    cardOpenNewText.value = projList.currentProject.todoList[index].text;
+    cardOpenNew.removeAttribute("style");
     cardCloseButton.addEventListener("click", () => {
-        console.log("privet");
         cardOpenNew.remove();
+        projList.saveLocalStorage();
     })
-    
+    cardNode.appendChild(cardOpenNew);
 }
 
 export function showToDoDiv(projList) {
