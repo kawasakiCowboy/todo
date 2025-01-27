@@ -11,13 +11,14 @@ import "./open_card.css";
 // INITIALIZE AN APP
 export const projList = new ProjectList();
 const localProjList = JSON.parse(localStorage.getItem("projList"));
-console.log(localProjList);
 window.projList = projList;
 
 
 
 
 if (localProjList !== null) {
+    let currentProjectId = localProjList.currentProject.id;
+    projList.changeCurrentProject(currentProjectId - 1);
 
 for ( let i = 0; i < localProjList.idCount; i++ ) {
     let projectTitle = localProjList.projectList[i].title;
@@ -38,8 +39,7 @@ for ( let i = 0; i < localProjList.idCount; i++ ) {
     projList.createProject("default project");
 }
 
-let currentProjectId = localProjList.currentProject.id;
-projList.changeCurrentProject(currentProjectId - 1);
+
 
 // projList.createProject("default project");
 showProjectsDiv(projList);
@@ -52,6 +52,7 @@ const addProjButton = document.querySelector(".add-project");
 addProjButton.addEventListener("click", () => {
     let name = prompt("name");
     projList.createProject(name);
+    showProjectTitle(projList)
     showProjectsDiv(projList);
     projList.saveLocalStorage();
 })

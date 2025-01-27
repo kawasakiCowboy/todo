@@ -1,7 +1,6 @@
 import { Project } from "./project";
-import { renderProjectButton, clearProjectButton } from "./projFunc";
 import { clearCards } from "./todoFunc";
-import { projList } from "./app";
+
 
 export class ProjectList {
     constructor() {
@@ -33,6 +32,14 @@ export class ProjectList {
 
     changeStatus(id) {
         this.projectList[id - 1].status = this.projectList[id - 1].status === "active" ? 'inactive' : "active"
+    }
+
+    findCardIndexById(id) {
+        return projList.currentProject.todoList.findIndex( toDo => toDo.id == id);
+    }
+
+    getCurrentProject() {
+        return this.currentProject;
     }
 }
 

@@ -9,9 +9,26 @@ export class Todo {
         this.status = "progress";
     }
 
+    getTitle() {
+        return this.title;
+    }
+
+    getText() {
+        return this.text;
+    }
+
     getDaysTilDeadline() {
-        let days = Math.round((this.deadline.getTime() -this.dateCreated.getTime()) / (1000 * 60 * 60 * 24));
+        let today = new Date();
+        let days = Math.round((this.deadline.getTime() -today.getTime()) / (1000 * 60 * 60 * 24));
         return days;
+    }
+
+    getTruncatedText() {
+        return this.text.length > 91 ? this.text.substr(0,91) + "..." : this.text;
+    }
+
+    getDeadlineMessage() {
+        return `Days till deadline: ${this.getDaysTilDeadline()}`;
     }
 }
 

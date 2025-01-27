@@ -21,4 +21,8 @@ export class Project {
     changeTitle(newTitle) {
         this.title = newTitle;
     }
+
+    getToDoList() {
+        return this.todoList;
+    }
 }
