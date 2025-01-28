@@ -10,7 +10,7 @@ export function renderTodo(id, projList, toDo) {
     toDoClone.removeAttribute("style");
     toDoClone.classList.add("card-active");
     toDoClone.addEventListener("click", (e) => {
-        openCard(projList, e.target.id);
+        openCard(projList, e.currentTarget.id);
         projList.saveLocalStorage();
     })
     toDoDOM.insertBefore(toDoClone, addButton);
@@ -24,12 +24,12 @@ export function clearCards() {
 }
 
 export function openCard(projList, cardId) {
-    let cardNode = document.querySelector(".todo-container");
-    let cardOpen = document.querySelector("#card-edit");
-    let cardOpenNew = cardOpen.cloneNode(true); 
-    let cardCloseButton = cardOpenNew.querySelector(".title-bar-delete-edit");
-    cardOpenNew.querySelector("#title-edit").value = projList.getCurrentProject().getToDoList()[projList.findCardIndexById(cardId)].getTitle();
-    cardOpenNew.querySelector("#text").value = projList.getCurrentProject().getToDoList()[projList.findCardIndexById(cardId)].getText();
+    const cardNode = document.querySelector(".todo-container");
+    const cardOpen = document.querySelector("#card-edit");
+    const cardOpenNew = cardOpen.cloneNode(true); 
+    const cardCloseButton = cardOpenNew.querySelector(".title-bar-delete-edit");
+    cardOpenNew.querySelector("#title-edit").value = projList.getCurrentProjectToDoById(cardId).getTitle();
+    cardOpenNew.querySelector("#text").value = projList.getCurrentProjectToDoById(cardId).getText();
     cardOpenNew.removeAttribute("style");
     cardCloseButton.addEventListener("click", () => {
         cardOpenNew.remove();
@@ -40,7 +40,7 @@ export function openCard(projList, cardId) {
 
 export function showToDoDiv(projList) {
     clearCards();
-    for (let toDo of projList.currentProject.todoList) {
+    for (let toDo of projList.getCurrentProject().getToDoList()) {
         renderTodo(toDo.id, projList, toDo);
     }
 }

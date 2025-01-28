@@ -19,7 +19,31 @@ export class ProjectList {
     }
 
     changeCurrentProject(id) {
-        this.currentProject = this.projectList[id];
+        
+        this.currentProject = this.projectList[id - 1];
+    }
+
+    changeCurrentProjectToLastActive(currentId) {
+        let loopCurrentId = currentId;
+        let length = this.projectList.length;
+        for (let i = 1; i < length; i++) {
+            if (this.projectList[loopCurrentId - i] !== undefined) {
+            if (this.projectList[loopCurrentId - i].status === "active") {
+                console.log(this.projectList[loopCurrentId - i]);
+                this.currentProject = this.projectList[loopCurrentId - i];
+                return;
+            }
+        } else {
+            loopCurrentId = length;
+            for (let j = 1; j < length; j++) {
+                if (this.projectList[loopCurrentId - j].status === "active") {
+                    console.log(this.projectList[loopCurrentId - j]);
+                    this.currentProject = this.projectList[loopCurrentId - j];
+                    return;
+                }
+            }
+        }
+        } 
     }
 
     saveLocalStorage() {
@@ -31,15 +55,20 @@ export class ProjectList {
     }
 
     changeStatus(id) {
-        this.projectList[id - 1].status = this.projectList[id - 1].status === "active" ? 'inactive' : "active"
-    }
-
-    findCardIndexById(id) {
-        return projList.currentProject.todoList.findIndex( toDo => toDo.id == id);
+        if (this.projectList.filter( item => item.status === 'active').length !== 1) {
+            this.projectList[id - 1].status = this.projectList[id - 1].status === "active" ? 'inactive' : "active"
+        } else {
+            alert("can't delete last project");
+        }
     }
 
     getCurrentProject() {
         return this.currentProject;
+    }
+
+    getCurrentProjectToDoById(id) {
+        const indexOfToDo = this.getCurrentProject().getToDoList().findIndex( toDo => toDo.id == id);
+        return this.getCurrentProject().getToDoList()[indexOfToDo];
     }
 }
 

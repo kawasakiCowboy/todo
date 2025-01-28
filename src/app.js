@@ -10,29 +10,29 @@ import "./open_card.css";
 
 // INITIALIZE AN APP
 export const projList = new ProjectList();
-const localProjList = JSON.parse(localStorage.getItem("projList"));
+let localProjList = JSON.parse(localStorage.getItem("projList"));
+console.log(localProjList);
 window.projList = projList;
 
 
 
 
 if (localProjList !== null) {
-    let currentProjectId = localProjList.currentProject.id;
-    projList.changeCurrentProject(currentProjectId - 1);
-
-for ( let i = 0; i < localProjList.idCount; i++ ) {
-    let projectTitle = localProjList.projectList[i].title;
-    let projectStatus = localProjList.projectList[i].status;
-    projList.createProject(projectTitle, projectStatus);
-    if (localProjList.projectList[i].todoList.length > 0) {
-        for (let j = 0; j < localProjList.projectList[i].idCount; j++ ) {
-            projList.projectList[i].createTodo(
-                localProjList.projectList[i].todoList[j].title,
-                localProjList.projectList[i].todoList[j].text,
-                new Date(localProjList.projectList[i].todoList[j].deadline)
-            )
+        let currentProjectId = localProjList.currentProject.id;
+    for ( let i = 0; i < localProjList.idCount; i++ ) {
+        let projectTitle = localProjList.projectList[i].title;
+        let projectStatus = localProjList.projectList[i].status;
+        projList.createProject(projectTitle, projectStatus);
+        projList.changeCurrentProject(currentProjectId);
+        if (localProjList.projectList[i].todoList.length > 0) {
+            for (let j = 0; j < localProjList.projectList[i].idCount; j++ ) {
+                projList.projectList[i].createTodo(
+                    localProjList.projectList[i].todoList[j].title,
+                    localProjList.projectList[i].todoList[j].text,
+                    new Date(localProjList.projectList[i].todoList[j].deadline)
+                )
+            }
     }
-}
 }
 
 } else { 
@@ -113,7 +113,7 @@ const deleteProjectButton = document.querySelector(".delete-project");
 deleteProjectButton.addEventListener("click", () => {
     let currentProjectId = projList.currentProject.id;
     projList.changeStatus(currentProjectId);
-    projList.changeCurrentProject(currentProjectId - 2);
+    projList.changeCurrentProjectToLastActive(currentProjectId);
     showProjectsDiv(projList);
     showProjectTitle(projList);
     showToDoDiv(projList);

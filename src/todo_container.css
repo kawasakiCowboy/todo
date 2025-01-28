@@ -23,8 +23,39 @@
     margin-right: 20px;
 }
 
+.delete-project:hover {
+    animation: wiggle 0.7s linear infinite;
+
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }    
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .edit-project {
     margin-left: 10px;
+}
+
+.edit-project:hover {
+    animation: wiggle 0.7s linear infinite;
 }
 
 .cards {
@@ -51,6 +82,11 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 10px;
+    transition: all 0.15s ease-in;
+}
+
+.card:hover {
+    background-color: rgb(209, 209, 209);
 }
 
 .card-add {
@@ -58,6 +94,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.1s ease-in, color 0.1s;
+}
+
+.card-add:hover {
+    background-color: black;
+    color: white;
 }
 
 .card-title {

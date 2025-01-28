@@ -1,3 +1,26 @@
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }    
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
 .open-card, .open-card-clear, .open-card-edit {
     z-index: 1;
     position: absolute;
@@ -33,6 +56,10 @@
 
 .title-bar-delete {
     margin-left: auto;
+}
+
+.title-bar-delete-add:hover {
+    animation: wiggle 0.7s linear infinite;
 }
 
 .title-bar-close {
@@ -95,6 +122,12 @@
     height: 50px;
     width: 130px;
     border: 1px solid black;
+    transition: all 0.15s ease-in;
+}
+
+.open-card-button:hover {
+    background-color: black;
+    color: white;
 }
 
 .deadline-dates {

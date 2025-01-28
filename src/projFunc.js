@@ -7,7 +7,7 @@ export function renderProjectButton(name,id, projList) {
     let projectDOM = document.querySelector(".sidebar-container");
     let projClone = projectNode.cloneNode(true);
     projClone.addEventListener("click", (e) => {
-        projList.changeCurrentProject(e.target.id - 1);
+        projList.changeCurrentProject(e.target.id);
         showToDoDiv(projList);
         showProjectTitle(projList);
         projList.saveLocalStorage();

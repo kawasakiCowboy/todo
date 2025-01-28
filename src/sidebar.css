@@ -43,10 +43,23 @@
 
 .not-default-project {
     background-color: #d9d9d948;
+    transition: background-color 0.1s ease-in 0s;
+}
+
+.not-default-project:hover {
+    background-color: #8d8d8d48;
 }
 
 .add-project {
     border: 1px solid black;
+    box-shadow: none;
+    transition: background-color 0.1s ease-in 0s;
+}
+
+.add-project:hover {
+    border: 1px solid black;
+    background-color: black;
+    color: white;
     box-shadow: none;
 }
 
