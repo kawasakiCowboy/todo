@@ -9,7 +9,7 @@ export function renderTodo(id, projList, toDo) {
     toDoClone.querySelector(".card-deadline").textContent = toDo.getDeadlineMessage();
     toDoClone.setAttribute("id",id);
     toDoClone.removeAttribute("style");
-    toDoClone.classList.add("card-active");
+    toDoClone.classList.add("card-active", "pointer");
     if (toDo.getStatus() === "done") {
         toDoClone.classList.add("done");
     }

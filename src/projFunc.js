@@ -13,7 +13,7 @@ export function renderProjectButton(name,id, projList) {
         projList.saveLocalStorage();
     } )
     projClone.removeAttribute("style");
-    projClone.classList.add("project-button","project");
+    projClone.classList.add("project-button","project", "pointer");
     projClone.textContent = name;
     projClone.id = id;
     projectDOM.insertBefore(projClone, addButton);
