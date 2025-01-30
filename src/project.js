@@ -9,8 +9,8 @@ export class Project {
         this.status = status === undefined ? "active" : status;
     }
 
-    createTodo(title,text,deadline) {
-        let newTodo = new Todo(title,text,deadline);
+    createTodo(title,text,deadline,status) {
+        let newTodo = new Todo(title,text,deadline,status);
         let newToDoId = this.idCount + 1;
         this.idCount = this.idCount + 1
         newTodo.id = newToDoId;

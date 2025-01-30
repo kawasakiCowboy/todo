@@ -38,6 +38,16 @@
     gap: 10px;
 }
 
+.card-close-button {
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+}
+
+.card-close-button:hover {
+    animation: wiggle 0.7s linear infinite;
+}
+
 .title-bar h1 {
     margin-left: auto;
 }
@@ -59,6 +69,10 @@
 }
 
 .title-bar-delete-add:hover {
+    animation: wiggle 0.7s linear infinite;
+}
+
+.title-bar-delete-edit:hover {
     animation: wiggle 0.7s linear infinite;
 }
 
@@ -116,6 +130,12 @@
     margin: 30px;
 }
 
+#open-card-done-add  {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
 .open-card-button {
     font-size: 30px;
     background-color: transparent;
@@ -144,10 +164,27 @@
     font-size: 20px;
 }
 
+#clear-card-deadline {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#clear-card-deadline div {
+    display: flex;
+}
+
 #deadline {
     background-color: transparent;
     border: 1px solid black;
     margin-left: 10px;
+}
+
+#status {
+    background-color: transparent;
+    border: 1px solid black;
+    margin-left: 10px; 
 }
 
 .title-ok-button {

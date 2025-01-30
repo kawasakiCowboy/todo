@@ -54,7 +54,7 @@ export class ProjectList {
     )
     }
 
-    changeStatus(id) {
+    deleteProject(id) {
         if (this.projectList.filter( item => item.status === 'active').length !== 1) {
             this.projectList[id - 1].status = this.projectList[id - 1].status === "active" ? 'inactive' : "active"
         } else {

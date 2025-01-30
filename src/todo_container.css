@@ -111,3 +111,10 @@ p.card-title, p.card-text, p.card-deadline {
     overflow: hidden; 
 }
 
+.done {
+    background-color: rgb(210, 238, 210);
+}
+
+.done:hover {
+    background-color: rgb(196, 223, 196);
+}

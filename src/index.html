@@ -62,68 +62,45 @@
         
 
 
-
-        
-        <!-- <div class="open-card" style="visibility: hidden">
+        <form class="open-card-clear" style="visibility: hidden" id="card-edit">
           <div class="title-bar">
-            <svg class="title-bar-close" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_2_82)">
-              <path d="M38 12.82L35.18 10L24 21.18L12.82 10L10 12.82L21.18 24L10 35.18L12.82 38L24 26.82L35.18 38L38 35.18L26.82 24L38 12.82Z" fill="#323232"/>
-              </g>
-              <rect x="0.5" y="0.5" width="47" height="47" stroke="black"/>
-              <defs>
-              <clipPath id="clip0_2_82">
-              <rect width="48" height="48" fill="white"/>
-              </clipPath>
-              </defs>
-              </svg>
-              <h1>Get shit done</h1>
-              <svg class="title-bar-edit" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M29.0282 0.547778C28.6505 0.17 28.1783 0 27.6873 0C27.1962 0 26.7241 0.188889 26.3652 0.547778L22.909 4.00444L29.9914 11.0878L33.4476 7.63111C34.1841 6.89444 34.1841 5.70444 33.4476 4.96778L29.0282 0.547778ZM27.9706 13.1089L20.8882 6.02556L0 26.9167V34H7.08235L27.9706 13.1089ZM3.77725 30.2222V28.4844L20.8882 11.3711L22.6257 13.1089L5.51479 30.2222H3.77725Z" fill="#323232"/>
+              <input required type="text" name="title" id="title-edit">
+              <svg class="card-close-button" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2_81)">
+                <path d="M38 12.82L35.18 10L24 21.18L12.82 10L10 12.82L21.18 24L10 35.18L12.82 38L24 26.82L35.18 38L38 35.18L26.82 24L38 12.82Z" fill="#323232"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_2_83">
+                <rect width="48" height="48" fill="white"/>
+                </clipPath>
+                </defs>
                 </svg>
-                <svg class="title-bar-delete" width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_10_8)">
-                  <path opacity="0.3" d="M10.2083 20.4167H22.4583V36.75H10.2083V20.4167Z" fill="#323232"/>
-                  <path d="M30.6249 32.6667H38.7916V36.75H30.6249V32.6667ZM30.6249 16.3333H44.9166V20.4167H30.6249V16.3333ZM30.6249 24.5H42.8749V28.5833H30.6249V24.5ZM6.12492 36.75C6.12492 38.9958 7.96242 40.8333 10.2083 40.8333H22.4583C24.7041 40.8333 26.5416 38.9958 26.5416 36.75V16.3333H6.12492V36.75ZM10.2083 20.4167H22.4583V36.75H10.2083V20.4167ZM20.4166 8.16666H12.2499L10.2083 10.2083H4.08325V14.2917H28.5833V10.2083H22.4583L20.4166 8.16666Z" fill="#323232"/>
-                  </g>
-                  <defs>
-                  <clipPath id="clip0_10_8">
-                  <rect width="49" height="49" fill="white"/>
-                  </clipPath>
-                  </defs>
-                  </svg> 
+                
+
           </div>
+
           <div class="open-card-content">
             <div class="open-card-text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-              <div class="open-card-edit">
-                <svg  width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M29.0282 0.547778C28.6505 0.17 28.1783 0 27.6873 0C27.1962 0 26.7241 0.188889 26.3652 0.547778L22.909 4.00444L29.9914 11.0878L33.4476 7.63111C34.1841 6.89444 34.1841 5.70444 33.4476 4.96778L29.0282 0.547778ZM27.9706 13.1089L20.8882 6.02556L0 26.9167V34H7.08235L27.9706 13.1089ZM3.77725 30.2222V28.4844L20.8882 11.3711L22.6257 13.1089L5.51479 30.2222H3.77725Z" fill="#323232"/>
-                </svg>
-              </div>
-            
+              <textarea required type="text" name="text" id="text"></textarea>
+              
             </div>
             
-            <div class="open-card-dates">
-              <p>added: 13-12-2024</p>
-              <p>today: 01-01-2025</p>
-              <div class="deadline-dates">
-                <p>deadline: 02-01-2025</p>
-                <svg class="title-bar-edit" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M29.0282 0.547778C28.6505 0.17 28.1783 0 27.6873 0C27.1962 0 26.7241 0.188889 26.3652 0.547778L22.909 4.00444L29.9914 11.0878L33.4476 7.63111C34.1841 6.89444 34.1841 5.70444 33.4476 4.96778L29.0282 0.547778ZM27.9706 13.1089L20.8882 6.02556L0 26.9167V34H7.08235L27.9706 13.1089ZM3.77725 30.2222V28.4844L20.8882 11.3711L22.6257 13.1089L5.51479 30.2222H3.77725Z" fill="#323232"/>
-                  </svg>
+            <div id="clear-card-deadline">
+              <div>
+                <p>deadline:</p>
+                <input required class="deadline-picker" type="date" name="deadline" id="deadline">
               </div>
-              <p>deadline: changes: 13</p>
+              <div>
+                <p>status:</p>
+                <select name="status" id="status">
+                  <option value="progress">progress</option>
+                  <option value="done">done</option>
+                </select>
+              </div>
             </div>
-            <div class="open-card-done">
-              <button class="open-card-button">Done</button>
-            </div>
-          </div>
-        </div> -->
+            
+            <div id="open-card-done-add">
 
-        <div class="open-card-clear" style="visibility: hidden" id="card-edit">
-          <div class="title-bar">
-              <input type="text" name="title" id="title-edit">
               <svg class="title-bar-delete-edit" width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_10_9)">
                 <path opacity="0.3" d="M10.2083 20.4167H22.4583V36.75H10.2083V20.4167Z" fill="#323232"/>
@@ -134,24 +111,12 @@
                 <rect width="49" height="49" fill="white"/>
                 </clipPath>
                 </defs>
-                </svg> 
-          </div>
-          <div class="open-card-content">
-            <div class="open-card-text">
-              <textarea type="text" name="text" id="text"></textarea>
-              
-            </div>
-            
-            <div class="clear-card-deadline">
-              <p>deadline:</p>
-              <input class="deadline-picker" type="date" name="deadline" id="deadline">
-            </div>
-            
-            <div class="open-card-done">
-              <button class="open-card-button">done</button>
+              </svg> 
+
+              <button type="submit" class="open-card-button">ok</button>
             </div>
           </div>
-        </div>
+        </form>
 
 
         <div class="todo-container-title">
