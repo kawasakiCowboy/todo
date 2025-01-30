@@ -29,7 +29,8 @@ if (localProjList !== null) {
                 projList.projectList[i].createTodo(
                     localProjList.projectList[i].todoList[j].title,
                     localProjList.projectList[i].todoList[j].text,
-                    new Date(localProjList.projectList[i].todoList[j].deadline)
+                    new Date(localProjList.projectList[i].todoList[j].deadline),
+                    localProjList.projectList[i].todoList[j].status
                 )
             }
     }
@@ -89,14 +90,13 @@ addTodoButton.addEventListener("click", () => {
     let todoContainer = document.querySelector(".todo-container");
     todoContainer.insertBefore(addCard, defaultCard);
     let title = addCard.querySelector("#title-add");
-    let createButton = addCard.querySelector("button");
     let text = addCard.querySelector("#text");
     let deadline = addCard.querySelector(".deadline-picker");
     let deleteButton = addCard.querySelector(".title-bar-delete-add");
     projList.saveLocalStorage();
     addCard.addEventListener("submit", () => {
         let deadlineFormat = new Date(deadline.value);
-        projList.currentProject.createTodo(title.value,text.value,deadlineFormat);
+        projList.currentProject.createTodo(title.value,text.value,deadlineFormat,"progress");
         showToDoDiv(projList);
         addCard.remove();
         projList.saveLocalStorage();
@@ -112,7 +112,7 @@ addTodoButton.addEventListener("click", () => {
 const deleteProjectButton = document.querySelector(".delete-project");
 deleteProjectButton.addEventListener("click", () => {
     let currentProjectId = projList.currentProject.id;
-    projList.changeStatus(currentProjectId);
+    projList.deleteProject(currentProjectId);
     projList.changeCurrentProjectToLastActive(currentProjectId);
     showProjectsDiv(projList);
     showProjectTitle(projList);
