@@ -94,7 +94,7 @@ addTodoButton.addEventListener("click", () => {
     let deadline = addCard.querySelector(".deadline-picker");
     let deleteButton = addCard.querySelector(".title-bar-delete-add");
     projList.saveLocalStorage();
-    createButton.addEventListener("click", () => {
+    addCard.addEventListener("submit", () => {
         let deadlineFormat = new Date(deadline.value);
         projList.currentProject.createTodo(title.value,text.value,deadlineFormat);
         showToDoDiv(projList);

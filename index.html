@@ -28,9 +28,9 @@
         </div>
       </div>
       <div class="todo-container">
-        <div class="open-card-clear" style="visibility: hidden" id="card-add">
+        <form class="open-card-clear" style="visibility: hidden" id="card-add">
           <div class="title-bar">
-              <input type="text" name="title" id="title-add">
+              <input required type="text" name="title" id="title-add">
                 <svg class="title-bar-delete-add" width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_10_8)">
                   <path opacity="0.3" d="M10.2083 20.4167H22.4583V36.75H10.2083V20.4167Z" fill="#323232"/>
@@ -45,20 +45,20 @@
           </div>
           <div class="open-card-content">
             <div class="open-card-text">
-              <textarea type="text" name="text" id="text"></textarea>
+              <textarea required type="text" name="text" id="text"></textarea>
               
             </div>
             
             <div class="clear-card-deadline">
               <p>deadline:</p>
-              <input class="deadline-picker" type="date" name="deadline" id="deadline">
+              <input required class="deadline-picker" type="date" name="deadline" id="deadline">
             </div>
             
             <div class="open-card-done">
-              <button class="open-card-button">create</button>
+              <button type="submit" class="open-card-button">create</button>
             </div>
           </div>
-        </div>
+        </form>
         
 
 
@@ -183,6 +183,6 @@
         </div>
       </div>
     </div>
-    <script type="module" src="6aa4c268e28d9e99ed53.js"></script>
+    <script type="module" src="fd29c8dab4ebf25fc5ce.js"></script>
   </body>
 </html>
