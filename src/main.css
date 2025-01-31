@@ -1,8 +1,13 @@
+@font-face {
+    font-family: "courier cyr";
+    src: url("./fonts/couriercyrps.ttf");
+}
+
 * { 
     margin: 0;
     padding: 0;
     --main-bg-color: #f5f5f5;
-    font-family: "Josefin Sans", serif, sans-serif, Verdana, Geneva, Tahoma;
+    font-family: "courier cyr","Josefin Sans", serif, sans-serif, Verdana, Geneva, Tahoma;
     font-weight: normal;
 }
 
